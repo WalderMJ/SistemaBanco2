@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gboxClientes = new System.Windows.Forms.GroupBox();
+            this.cboxCategoria = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.btnActualizar = new FontAwesome.Sharp.IconButton();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
@@ -47,7 +48,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
-            this.cboxCategoria = new System.Windows.Forms.ComboBox();
             this.gboxClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +79,19 @@
             this.gboxClientes.TabIndex = 0;
             this.gboxClientes.TabStop = false;
             this.gboxClientes.Text = "DATOS CLIENTES";
+            this.gboxClientes.Enter += new System.EventHandler(this.gboxClientes_Enter);
+            // 
+            // cboxCategoria
+            // 
+            this.cboxCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(34)))), ((int)(((byte)(118)))));
+            this.cboxCategoria.FormattingEnabled = true;
+            this.cboxCategoria.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cboxCategoria.Location = new System.Drawing.Point(625, 127);
+            this.cboxCategoria.Name = "cboxCategoria";
+            this.cboxCategoria.Size = new System.Drawing.Size(196, 30);
+            this.cboxCategoria.TabIndex = 19;
             // 
             // btnGuardar
             // 
@@ -94,6 +107,7 @@
             this.btnGuardar.Text = "Cancelar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnActualizar
             // 
@@ -109,6 +123,7 @@
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnCancelar
             // 
@@ -276,18 +291,6 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // cboxCategoria
-            // 
-            this.cboxCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(34)))), ((int)(((byte)(118)))));
-            this.cboxCategoria.FormattingEnabled = true;
-            this.cboxCategoria.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.cboxCategoria.Location = new System.Drawing.Point(625, 127);
-            this.cboxCategoria.Name = "cboxCategoria";
-            this.cboxCategoria.Size = new System.Drawing.Size(196, 30);
-            this.cboxCategoria.TabIndex = 19;
             // 
             // FrmClientes
             // 
