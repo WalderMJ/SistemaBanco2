@@ -190,9 +190,10 @@
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Size = new System.Drawing.Size(195, 51);
             this.btnProveedores.TabIndex = 3;
-            this.btnProveedores.Text = "Proveedores";
+            this.btnProveedores.Text = "Cuentas";
             this.btnProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProveedores.UseVisualStyleBackColor = true;
+            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
             // btnClientes
             // 

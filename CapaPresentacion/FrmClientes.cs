@@ -58,6 +58,8 @@ namespace CapaPresentacion
 
 
 
+
+
         private void FrmClientes_Load(object sender, EventArgs e)
         {
             MtdMostrarClientes();
