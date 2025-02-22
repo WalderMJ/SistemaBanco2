@@ -21,25 +21,25 @@ namespace CapaDatos
             db_conexion.MtdCerrarConexion();
             return dtMostrarCuentas;
         }
-        public void CD_mtdAgregarCuentas(string Nombre, string Direccion, string Departamento, string Pais, string Categoria, string Estado)
+        public void CD_mtdAgregarCuentas(int CodigoCliente, string NumeroCuentas, string TipoCuenta, Decimal Saldo, DateTime FechaApertura, string Estado)
         {
-            //db_conexion.MtdAbrirConexion();
+           
             string Usp_crear = "usp_cuentas_crear";
             SqlCommand cmd_InsertarCuentas = new SqlCommand(Usp_crear, db_conexion.MtdAbrirConexion());
             cmd_InsertarCuentas.CommandType = CommandType.StoredProcedure;
 
-            cmd_InsertarCuentas.Parameters.AddWithValue("@Nombre", Nombre);
-            cmd_InsertarCuentas.Parameters.AddWithValue("@Direccion", Direccion);
-            cmd_InsertarCuentas.Parameters.AddWithValue("@Departamento", Departamento);
-            cmd_InsertarCuentas.Parameters.AddWithValue("@Pais", Pais);
-            cmd_InsertarCuentas.Parameters.AddWithValue("@Categoria", Categoria);
+            cmd_InsertarCuentas.Parameters.AddWithValue("@CodigoCliente", CodigoCliente);
+            cmd_InsertarCuentas.Parameters.AddWithValue("@NumeroCuentas", NumeroCuentas);
+            cmd_InsertarCuentas.Parameters.AddWithValue("@TipoCuenta", TipoCuenta);
+           
+            cmd_InsertarCuentas.Parameters.AddWithValue("@Saldo", Saldo);
+            cmd_InsertarCuentas.Parameters.AddWithValue("@FechaApertura", FechaApertura);
             cmd_InsertarCuentas.Parameters.AddWithValue("@Estado", Estado);
             cmd_InsertarCuentas.ExecuteNonQuery();
 
             db_conexion.MtdCerrarConexion();
         }
 
-
-
+        
     }
 }

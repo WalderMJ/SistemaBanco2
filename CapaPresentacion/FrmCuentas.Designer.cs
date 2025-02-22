@@ -31,22 +31,22 @@
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.gboxClientes = new System.Windows.Forms.GroupBox();
-            this.cboxCategoria = new System.Windows.Forms.ComboBox();
+            this.cboxTipoCuenta = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.btnActualizar = new FontAwesome.Sharp.IconButton();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.cboxEstado = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtFechaApertura = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtDepartamento = new System.Windows.Forms.TextBox();
+            this.txtSaldo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtPais = new System.Windows.Forms.TextBox();
+            this.txtNumeroCuenta = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtNombres = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtCodigoCliente = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCodigoCuenta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.gboxClientes.SuspendLayout();
@@ -83,22 +83,22 @@
             // 
             // gboxClientes
             // 
-            this.gboxClientes.Controls.Add(this.cboxCategoria);
+            this.gboxClientes.Controls.Add(this.cboxTipoCuenta);
             this.gboxClientes.Controls.Add(this.btnGuardar);
             this.gboxClientes.Controls.Add(this.btnActualizar);
             this.gboxClientes.Controls.Add(this.btnCancelar);
             this.gboxClientes.Controls.Add(this.cboxEstado);
             this.gboxClientes.Controls.Add(this.label8);
             this.gboxClientes.Controls.Add(this.label7);
-            this.gboxClientes.Controls.Add(this.txtDireccion);
+            this.gboxClientes.Controls.Add(this.txtFechaApertura);
             this.gboxClientes.Controls.Add(this.label6);
-            this.gboxClientes.Controls.Add(this.txtDepartamento);
+            this.gboxClientes.Controls.Add(this.txtSaldo);
             this.gboxClientes.Controls.Add(this.label4);
-            this.gboxClientes.Controls.Add(this.txtPais);
+            this.gboxClientes.Controls.Add(this.txtNumeroCuenta);
             this.gboxClientes.Controls.Add(this.label3);
-            this.gboxClientes.Controls.Add(this.txtNombres);
-            this.gboxClientes.Controls.Add(this.label2);
             this.gboxClientes.Controls.Add(this.txtCodigoCliente);
+            this.gboxClientes.Controls.Add(this.label2);
+            this.gboxClientes.Controls.Add(this.txtCodigoCuenta);
             this.gboxClientes.Controls.Add(this.label1);
             this.gboxClientes.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gboxClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(34)))), ((int)(((byte)(118)))));
@@ -110,17 +110,17 @@
             this.gboxClientes.Text = "DATOS CUENTAS";
             this.gboxClientes.Enter += new System.EventHandler(this.gboxClientes_Enter);
             // 
-            // cboxCategoria
+            // cboxTipoCuenta
             // 
-            this.cboxCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(34)))), ((int)(((byte)(118)))));
-            this.cboxCategoria.FormattingEnabled = true;
-            this.cboxCategoria.Items.AddRange(new object[] {
+            this.cboxTipoCuenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(34)))), ((int)(((byte)(118)))));
+            this.cboxTipoCuenta.FormattingEnabled = true;
+            this.cboxTipoCuenta.Items.AddRange(new object[] {
             "Ahorro",
             "Corriente"});
-            this.cboxCategoria.Location = new System.Drawing.Point(625, 127);
-            this.cboxCategoria.Name = "cboxCategoria";
-            this.cboxCategoria.Size = new System.Drawing.Size(196, 30);
-            this.cboxCategoria.TabIndex = 19;
+            this.cboxTipoCuenta.Location = new System.Drawing.Point(625, 127);
+            this.cboxTipoCuenta.Name = "cboxTipoCuenta";
+            this.cboxTipoCuenta.Size = new System.Drawing.Size(196, 30);
+            this.cboxTipoCuenta.TabIndex = 19;
             // 
             // btnGuardar
             // 
@@ -136,6 +136,7 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnActualizar
             // 
@@ -151,6 +152,7 @@
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnCancelar
             // 
@@ -163,7 +165,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(129, 40);
             this.btnCancelar.TabIndex = 16;
-            this.btnCancelar.Text = "Eliminar";
+            this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -199,13 +201,13 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Tipo Cuenta :";
             // 
-            // txtDireccion
+            // txtFechaApertura
             // 
-            this.txtDireccion.Font = new System.Drawing.Font("Calisto MT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(631, 86);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(315, 28);
-            this.txtDireccion.TabIndex = 11;
+            this.txtFechaApertura.Font = new System.Drawing.Font("Calisto MT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaApertura.Location = new System.Drawing.Point(631, 86);
+            this.txtFechaApertura.Name = "txtFechaApertura";
+            this.txtFechaApertura.Size = new System.Drawing.Size(315, 28);
+            this.txtFechaApertura.TabIndex = 11;
             // 
             // label6
             // 
@@ -217,13 +219,13 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Fecha Apertura:";
             // 
-            // txtDepartamento
+            // txtSaldo
             // 
-            this.txtDepartamento.Font = new System.Drawing.Font("Calisto MT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDepartamento.Location = new System.Drawing.Point(164, 162);
-            this.txtDepartamento.Name = "txtDepartamento";
-            this.txtDepartamento.Size = new System.Drawing.Size(196, 28);
-            this.txtDepartamento.TabIndex = 7;
+            this.txtSaldo.Font = new System.Drawing.Font("Calisto MT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSaldo.Location = new System.Drawing.Point(164, 162);
+            this.txtSaldo.Name = "txtSaldo";
+            this.txtSaldo.Size = new System.Drawing.Size(196, 28);
+            this.txtSaldo.TabIndex = 7;
             // 
             // label4
             // 
@@ -235,13 +237,13 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Saldo:";
             // 
-            // txtPais
+            // txtNumeroCuenta
             // 
-            this.txtPais.Font = new System.Drawing.Font("Calisto MT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPais.Location = new System.Drawing.Point(178, 125);
-            this.txtPais.Name = "txtPais";
-            this.txtPais.Size = new System.Drawing.Size(196, 28);
-            this.txtPais.TabIndex = 5;
+            this.txtNumeroCuenta.Font = new System.Drawing.Font("Calisto MT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroCuenta.Location = new System.Drawing.Point(178, 125);
+            this.txtNumeroCuenta.Name = "txtNumeroCuenta";
+            this.txtNumeroCuenta.Size = new System.Drawing.Size(196, 28);
+            this.txtNumeroCuenta.TabIndex = 5;
             // 
             // label3
             // 
@@ -253,13 +255,13 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Numero Cuenta:";
             // 
-            // txtNombres
+            // txtCodigoCliente
             // 
-            this.txtNombres.Font = new System.Drawing.Font("Calisto MT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombres.Location = new System.Drawing.Point(176, 89);
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(192, 28);
-            this.txtNombres.TabIndex = 3;
+            this.txtCodigoCliente.Font = new System.Drawing.Font("Calisto MT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoCliente.Location = new System.Drawing.Point(176, 89);
+            this.txtCodigoCliente.Name = "txtCodigoCliente";
+            this.txtCodigoCliente.Size = new System.Drawing.Size(192, 28);
+            this.txtCodigoCliente.TabIndex = 3;
             // 
             // label2
             // 
@@ -271,13 +273,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Codigo Clientes:";
             // 
-            // txtCodigoCliente
+            // txtCodigoCuenta
             // 
-            this.txtCodigoCliente.Font = new System.Drawing.Font("Calisto MT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoCliente.Location = new System.Drawing.Point(172, 47);
-            this.txtCodigoCliente.Name = "txtCodigoCliente";
-            this.txtCodigoCliente.Size = new System.Drawing.Size(196, 28);
-            this.txtCodigoCliente.TabIndex = 1;
+            this.txtCodigoCuenta.Font = new System.Drawing.Font("Calisto MT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoCuenta.Location = new System.Drawing.Point(172, 47);
+            this.txtCodigoCuenta.Name = "txtCodigoCuenta";
+            this.txtCodigoCuenta.Size = new System.Drawing.Size(196, 28);
+            this.txtCodigoCuenta.TabIndex = 1;
             // 
             // label1
             // 
@@ -316,22 +318,22 @@
         private FontAwesome.Sharp.IconButton btnEliminar;
         private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.GroupBox gboxClientes;
-        private System.Windows.Forms.ComboBox cboxCategoria;
+        private System.Windows.Forms.ComboBox cboxTipoCuenta;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private FontAwesome.Sharp.IconButton btnActualizar;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private System.Windows.Forms.ComboBox cboxEstado;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.TextBox txtFechaApertura;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtDepartamento;
+        private System.Windows.Forms.TextBox txtSaldo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtPais;
+        private System.Windows.Forms.TextBox txtNumeroCuenta;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtNombres;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCodigoCliente;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtCodigoCuenta;
         private System.Windows.Forms.Label label1;
     }
 }

@@ -24,6 +24,32 @@ namespace CapaPresentacion
             DataTable dtMostrarCuentas = cd_cuentas.MtMostrarCuentas();
             dgvClientes.DataSource = dtMostrarCuentas;
         }
+
+        public void mtdCrearCuentas()
+        {
+            CD_Cuentas cd_cuentas = new CD_Cuentas();
+
+
+            try
+            {
+                int codigoCliente = int.Parse(txtCodigoCliente.Text);
+                decimal saldo = decimal.Parse(txtSaldo.Text);
+                DateTime fechaApertura = DateTime.Parse(txtFechaApertura.Text);
+
+                cd_cuentas.CD_mtdAgregarCuentas(codigoCliente, txtNumeroCuenta.Text, cboxTipoCuenta.Text, saldo, fechaApertura, cboxEstado.Text);
+
+                MessageBox.Show("El cliente se agrego con exito", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                throw;
+            }
+        }
+
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -35,6 +61,16 @@ namespace CapaPresentacion
         }
 
         private void FrmCuentas_Load(object sender, EventArgs e)
+        {
+            MtdMostrarCuentas();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            mtdCrearCuentas();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
             MtdMostrarCuentas();
         }

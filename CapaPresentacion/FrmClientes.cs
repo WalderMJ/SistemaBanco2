@@ -13,8 +13,10 @@ namespace CapaPresentacion
 {
     public partial class FrmClientes : Form
     {
+        
         public FrmClientes()
         {
+            
             InitializeComponent();
         }
 
@@ -63,6 +65,7 @@ namespace CapaPresentacion
         private void FrmClientes_Load(object sender, EventArgs e)
         {
             MtdMostrarClientes();
+            this.Enabled = true;
         }
 
         private void label4_Click(object sender, EventArgs e)
