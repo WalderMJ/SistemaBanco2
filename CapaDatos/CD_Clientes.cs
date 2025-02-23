@@ -22,7 +22,8 @@ namespace CapaDatos
             db_conexion.MtdCerrarConexion();
             return dtMostrarClientes;
         }
-        public void CD_mtdAgregarClientes(string Nombre, string Direccion, string Departamento, string Pais, string Categoria, string Estado)
+        public void CD_mtdAgregarClientes(string Nombre, string Direccion, string Departamento, string Pais, 
+                                            string Categoria, string Estado)
         {
             //db_conexion.MtdAbrirConexion();
             string Usp_crear = "usp_clientes_crear";
@@ -40,7 +41,49 @@ namespace CapaDatos
             db_conexion.MtdCerrarConexion();
         }
 
-        
+        public void MtdActualizarClientes(int Codigo, string Nombre, String Direccion, String Departamento, String Pais, String Categoria, String Estado)
+        {
+
+            String usp_actualizar = "usp_clientes_editar";
+
+            SqlCommand cmduspActualizar = new SqlCommand(usp_actualizar, db_conexion.MtdAbrirConexion());
+
+            cmduspActualizar.CommandType = CommandType.StoredProcedure;
+
+            cmduspActualizar.Parameters.AddWithValue("@Codigo", Codigo);
+
+            cmduspActualizar.Parameters.AddWithValue("@Nombre", Nombre);
+            cmduspActualizar.Parameters.AddWithValue("@Direccion", Direccion);
+            cmduspActualizar.Parameters.AddWithValue("@Departamento", Departamento);
+            cmduspActualizar.Parameters.AddWithValue("@Pais", Pais);
+            cmduspActualizar.Parameters.AddWithValue("@Categoria", Categoria);
+            cmduspActualizar.Parameters.AddWithValue("@Estado", Estado);
+            cmduspActualizar.ExecuteNonQuery();
+
+            db_conexion.MtdCerrarConexion();
+
+
+        }
+
+        public void CD_mtdEliminarrClientes(int Codigo)
+        {
+
+
+
+            string UspEliminarClientes = "ups_clientes_eliminar";
+            SqlCommand commUspEliminarClientes = new SqlCommand(UspEliminarClientes, db_conexion.MtdAbrirConexion());
+            commUspEliminarClientes.CommandType = CommandType.StoredProcedure;
+
+            commUspEliminarClientes.Parameters.AddWithValue("@Codigo", Codigo);
+            commUspEliminarClientes.ExecuteNonQuery();
+            
+
+
+            db_conexion.MtdCerrarConexion();
+
+        }
+
+
 
     }
 }
